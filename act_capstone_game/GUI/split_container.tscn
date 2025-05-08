@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1ppmkdtenk1e"]
+
+[ext_resource type="FontFile" uid="uid://dtrgcnolp4qkr" path="res://GUI/Role_Playing_Fonts_4_Mini/MiniCard.ttf" id="1_lxgsw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svpxq"]
+bg_color = Color(0.23809, 0.246934, 0.303499, 0.517647)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hu6h4"]
+resource_local_to_scene = true
+content_margin_left = 4.0
+content_margin_top = 9.0
+content_margin_bottom = 9.0
+
+[sub_resource type="Theme" id="Theme_84du2"]
+default_font = ExtResource("1_lxgsw")
+Button/styles/normal = SubResource("StyleBoxFlat_svpxq")
+Label/constants/outline_size = 4
+Label/fonts/font = ExtResource("1_lxgsw")
+Label/styles/normal = SubResource("StyleBoxEmpty_hu6h4")
+VBoxContainer/constants/separation = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uichh"]
+bg_color = Color(0.166, 0.184, 0.277, 0.643)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 4.0
+expand_margin_top = 2.0
+expand_margin_right = 4.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2p1g4"]
+content_margin_left = 59.0
+
+[sub_resource type="Theme" id="Theme_usk42"]
+Button/styles/normal = SubResource("StyleBoxFlat_uichh")
+Label/styles/normal = SubResource("StyleBoxEmpty_2p1g4")
+
+[node name="SplitContainer" type="VBoxContainer"]
+offset_left = 312.0
+offset_top = 169.0
+offset_right = 444.0
+offset_bottom = 240.0
+localize_numeral_system = false
+theme = SubResource("Theme_84du2")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 3.0
+text = "Enter bedroom?"
+horizontal_alignment = 3
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme = SubResource("Theme_usk42")
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.7
+text = "Yes"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.4
+text = "No"

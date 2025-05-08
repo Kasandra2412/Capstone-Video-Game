@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwrvi37y0sqiu"]
+
+[ext_resource type="Script" uid="uid://d38bi3bwgo0if" path="res://dialogue.gd" id="1_oi3j2"]
+[ext_resource type="Texture2D" uid="uid://c5hh0vktfawc7" path="res://GUI/Hexany's 1-bit UI Panels/Panels/polis_sanctuary.png" id="2_758ep"]
+[ext_resource type="FontFile" uid="uid://dtrgcnolp4qkr" path="res://GUI/Role_Playing_Fonts_4_Mini/MiniCard.ttf" id="4_iq77p"]
+
+[sub_resource type="Theme" id="Theme_iqg0b"]
+RichTextLabel/fonts/normal_font = ExtResource("4_iq77p")
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+script = ExtResource("1_oi3j2")
+
+[node name="Background" type="NinePatchRect" parent="."]
+modulate = Color(1, 1, 1, 0.447059)
+layout_mode = 1
+offset_left = -357.0
+offset_top = -108.0
+offset_right = 358.0
+offset_bottom = -12.0
+texture = ExtResource("2_758ep")
+patch_margin_left = 32
+patch_margin_top = 34
+patch_margin_right = 32
+patch_margin_bottom = 35
+
+[node name="Content" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -256.0
+offset_top = -77.0
+offset_right = 242.0
+offset_bottom = -26.0
+theme = SubResource("Theme_iqg0b")
+
+[node name="TypeTimer" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="Portrait" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -343.0
+offset_top = -92.0
+offset_right = -268.0
+offset_bottom = -22.0
+expand_mode = 2
+stretch_mode = 2
+
+[node name="SpeakerName" type="Label" parent="."]
+layout_mode = 0
+offset_left = -255.0
+offset_top = -102.0
+offset_right = -153.0
+offset_bottom = -79.0
+theme_override_fonts/font = ExtResource("4_iq77p")
+
+[connection signal="timeout" from="TypeTimer" to="." method="_on_type_timer_timeout"]

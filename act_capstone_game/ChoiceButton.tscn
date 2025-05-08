@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c11b7p5x1kuwy"]
+
+[ext_resource type="Script" uid="uid://cod46osepyorg" path="res://choice_button.gd" id="1_wlx04"]
+
+[node name="ChoiceButton" type="Button"]
+text = "Button, yippie!"
+script = ExtResource("1_wlx04")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

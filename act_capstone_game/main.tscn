@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5j3g05y7ift1"]
+
+[ext_resource type="Script" uid="uid://b2bdwubv83ad3" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://7jhf8qcdpc32" path="res://dialogue_manager.tscn" id="2_h2yge"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = 2.0
+offset_right = -17.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xm2m")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 137.0
+offset_right = 530.0
+offset_bottom = 206.0
+metadata/_edit_group_ = true
+
+[node name="Choice1" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Choice 1"
+
+[node name="Choice2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Choice 2
+"
+
+[node name="Choice3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Choice 3
+"
+
+[node name="DialogueManager" parent="." instance=ExtResource("2_h2yge")]
+
+[node name="NextLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 299.0
+offset_right = 466.0
+offset_bottom = 322.0
+text = "Press Enter."
+
+[node name="DialoguePosition" type="Marker2D" parent="."]
+position = Vector2(396, 445)
+
+[connection signal="pressed" from="HBoxContainer/Choice1" to="." method="_on_choice_1_pressed"]
+[connection signal="finished" from="DialogueManager" to="." method="_on_dialogue_manager_finished"]
+[connection signal="message_completed" from="DialogueManager" to="." method="_on_dialogue_manager_message_completed"]
+[connection signal="message_requested" from="DialogueManager" to="." method="_on_dialogue_manager_message_requested"]

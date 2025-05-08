@@ -1,0 +1,113 @@
+[gd_scene load_steps=11 format=3 uid="uid://d1qv3ttbnjuij"]
+
+[ext_resource type="Texture2D" uid="uid://dkfaktrby3hnw" path="res://GUI/Background/IMG_2569.JPG" id="1_qxn8y"]
+[ext_resource type="Script" uid="uid://b73pomqyus7gp" path="res://trust_choice.gd" id="1_tomgi"]
+[ext_resource type="Script" uid="uid://b1jksvl17hc2q" path="res://mainTrust.gd" id="3_wbo6a"]
+[ext_resource type="PackedScene" uid="uid://7jhf8qcdpc32" path="res://dialogue_manager.tscn" id="4_7w6o5"]
+[ext_resource type="FontFile" uid="uid://dtrgcnolp4qkr" path="res://GUI/Role_Playing_Fonts_4_Mini/MiniCard.ttf" id="5_svfkg"]
+[ext_resource type="AudioStream" uid="uid://bub56ay3hlkwf" path="res://audios/792707__universfield__mysterious-dark-background.mp3" id="6_7w6o5"]
+
+[sub_resource type="Animation" id="Animation_7o63m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transitions:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_n0sej"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transitions:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wbo6a"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transitions:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ve77"]
+_data = {
+&"RESET": SubResource("Animation_7o63m"),
+&"fade_in": SubResource("Animation_n0sej"),
+&"fade_out": SubResource("Animation_wbo6a")
+}
+
+[node name="Trust_choice" type="Node2D" node_paths=PackedStringArray("dialogue_position")]
+script = ExtResource("1_tomgi")
+dialogue_position = NodePath("Main")
+
+[node name="Img2569" type="Sprite2D" parent="."]
+position = Vector2(399.5, -24)
+scale = Vector2(0.675833, 0.641503)
+texture = ExtResource("1_qxn8y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5ve77")
+}
+
+[node name="Main" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 795.0
+offset_bottom = 450.0
+mouse_filter = 2
+script = ExtResource("3_wbo6a")
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogueManager" parent="Main" instance=ExtResource("4_7w6o5")]
+
+[node name="DialoguePosition" type="Marker2D" parent="Main"]
+position = Vector2(396, 445)
+
+[node name="NextLabel" type="Label" parent="Main"]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 320.0
+offset_right = 446.0
+offset_bottom = 336.0
+mouse_filter = 0
+theme_override_fonts/font = ExtResource("5_svfkg")
+text = "Press Space."
+
+[node name="Transitions" type="ColorRect" parent="."]
+offset_left = -10.0
+offset_right = 805.0
+offset_bottom = 469.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="background" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7w6o5")
+
+[connection signal="finished" from="Main/DialogueManager" to="." method="_on_dialogue_manager_finished"]
+[connection signal="finished" from="Main/DialogueManager" to="Main" method="_on_dialogue_manager_finished"]
+[connection signal="message_completed" from="Main/DialogueManager" to="Main" method="_on_dialogue_manager_message_completed"]
+[connection signal="message_requested" from="Main/DialogueManager" to="Main" method="_on_dialogue_manager_message_requested"]

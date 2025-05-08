@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8efmmh6gqj81"]
+
+[ext_resource type="Texture2D" uid="uid://bi470mc8t33hf" path="res://ComputerScreen-removebg-preview.png" id="1_561pf"]
+[ext_resource type="Script" uid="uid://dxafyr02aac6n" path="res://computer.gd" id="1_lxwf0"]
+[ext_resource type="Texture2D" uid="uid://dbajbxy778ryp" path="res://Message-removebg-preview.png" id="2_7s1hw"]
+[ext_resource type="Script" uid="uid://c403db1bb0eib" path="res://message_button.gd" id="2_lxwf0"]
+[ext_resource type="Texture2D" uid="uid://b3fsu3wo00j3j" path="res://IMG_2528.JPG" id="3_lxwf0"]
+[ext_resource type="Texture2D" uid="uid://ceovqc7sey6xl" path="res://GUI/UI assets pack 2/UI books & more2.png" id="4_7s1hw"]
+[ext_resource type="Script" uid="uid://cs3jv11ipomkl" path="res://closing_button.gd" id="5_dueua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dueua"]
+size = Vector2(236.416, 199.541)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjl6a"]
+size = Vector2(51.8996, 51.7096)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lxwf0")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -45.0
+offset_top = -11.0
+offset_right = 819.0
+offset_bottom = 474.0
+mouse_filter = 2
+
+[node name="ComputerScreen" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(398, 224)
+scale = Vector2(1.47559, 1.17021)
+texture = ExtResource("1_561pf")
+
+[node name="MessageIcon" type="Sprite2D" parent="."]
+position = Vector2(472, 66)
+scale = Vector2(0.149082, 0.151639)
+texture = ExtResource("2_7s1hw")
+region_enabled = true
+region_rect = Rect2(17, 119, 218, 183)
+
+[node name="MessageButton" type="Area2D" parent="."]
+position = Vector2(472, 66)
+scale = Vector2(0.149083, 0.151639)
+script = ExtResource("2_lxwf0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MessageButton"]
+position = Vector2(0.0001688, 1.19209e-05)
+shape = SubResource("RectangleShape2D_dueua")
+
+[node name="MessageScreen" type="Sprite2D" parent="."]
+position = Vector2(395, 124)
+scale = Vector2(0.22962, 0.180657)
+texture = ExtResource("3_lxwf0")
+
+[node name="ClosingButton" type="Area2D" parent="."]
+position = Vector2(395, 124)
+scale = Vector2(0.22962, 0.180657)
+script = ExtResource("5_dueua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClosingButton"]
+position = Vector2(311.397, -491.241)
+shape = SubResource("RectangleShape2D_tjl6a")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 595.0
+offset_top = 4.0
+offset_right = 613.0
+offset_bottom = 20.0
+metadata/_edit_group_ = true
+
+[node name="UiBooks&More2" type="Sprite2D" parent="Button"]
+position = Vector2(9, 7)
+texture = ExtResource("4_7s1hw")
+region_enabled = true
+region_rect = Rect2(674, 408, 16, 17)
+
+[connection signal="input_event" from="MessageButton" to="MessageButton" method="_on_input_event"]
+[connection signal="input_event" from="ClosingButton" to="ClosingButton" method="_on_input_event"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
