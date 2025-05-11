@@ -8490,6 +8490,7 @@ region_rect = Rect2(674, 408, 16, 17)
 stream = ExtResource("36_48xjj")
 
 [node name="DayLabel" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
 offset_left = 332.0
 offset_top = 199.0
 offset_right = 384.0

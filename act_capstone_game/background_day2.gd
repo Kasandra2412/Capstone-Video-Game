@@ -154,35 +154,35 @@ func investigate_point(point_id: String) ->void:
 				arrow.visible =false
 				
 				dialogue_manager.show_messages([
-				{"speaker": "You", "portrait": preload("res://Scared_Portrait.png"), "text": "What?"},
-				{"speaker": "You", "portrait": preload("res://Scared_Portrait.png"), "text": "How did this get all torn up?"},
-				{"speaker": "You", "portrait": preload("res://Scared_Portrait.png"), "text": "What could have done this?"}], dialogue_position.dialogue_position)
+				{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "What?"},
+				{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "How did this get all torn up?"},
+				{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "What could have done this?"}], dialogue_position.dialogue_position)
 			"moved_chair":
 				arrow_3.visible = false
 				dialogue_manager.show_messages([
-				{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "Ugh! I should clean up more around here."},
-				{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "Can't have my apartment all in a mess."}], dialogue_position.dialogue_position)
+				{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "Ugh! I should clean up more around here."},
+				{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "Can't have my apartment all in a mess."}], dialogue_position.dialogue_position)
 			"wilted_plants":
 				arrow_7.visible = false
 				dialogue_manager.show_messages([
-				{"speaker": "You", "portrait": preload("res://Scared_Portrait.png"), "text": "Oh no! What happened to my plants? They're all wilted."},
-				{"speaker": "You", "portrait": preload("res://Scared_Portrait.png"), "text": "I thought I was taking good care of them."},
-				{"speaker": "You", "portrait": preload("res://Scared_Portrait.png"), "text": "I must have done something wrong."}], dialogue_position.dialogue_position)
+				{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "Oh no! What happened to my plants? They're all wilted."},
+				{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "I thought I was taking good care of them."},
+				{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "I must have done something wrong."}], dialogue_position.dialogue_position)
 			"leaking_fridge":
 				arrow_4.visible = false
 				dialogue_manager.show_messages([
-				{"speaker": "You", "portrait": preload("res://Scared_Portrait.png"), "text": "Is this frigde leaking?"},
-				{"speaker": "You", "portrait": preload("res://Scared_Portrait.png"), "text": "Something must have gone bad inside."}], dialogue_position.dialogue_position)
+				{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "Is this frigde leaking?"},
+				{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "Something must have gone bad inside."}], dialogue_position.dialogue_position)
 			"torn_bathroom_rug":
 				arrow_6.visible = false
 				dialogue_manager.show_messages([
-				{"speaker": "You", "portrait": preload("res://Scared_Portrait.png"), "text": "Did the cat do this?"},
-				{"speaker": "You", "portrait": preload("res://Scared_Portrait.png"), "text": "Maybe I should get her some more toys to play with instead of her tearing my rugs."}], dialogue_position.dialogue_position)
+				{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "Did the cat do this?"},
+				{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "Maybe I should get her some more toys to play with instead of her tearing my rugs."}], dialogue_position.dialogue_position)
 			"broken_desk":
 				arrow_5.visible = false
 				dialogue_manager.show_messages([
-				{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "I knew these thrifted items would give up on me one day."},
-				{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "I should probably find a way to fix this."}], dialogue_position.dialogue_position)
+				{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "I knew these thrifted items would give up on me one day."},
+				{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "I should probably find a way to fix this."}], dialogue_position.dialogue_position)
 
 		if investigation_found >= investigation_total:
 			_on_investigation_complete()
@@ -332,12 +332,12 @@ func _on_phone_input_event(viewport: Node, event: InputEvent, shape_idx: int) ->
 	if event is InputEventMouseButton and event.pressed and event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 		if phone_answered == false:
 			dialogue_manager.show_messages([
-	{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "Hello?"},
+	{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "Hello?"},
 	{"speaker": "Unknown", "portrait": preload("res://Horror/Free-Cursed-Land-Top-Down-Pixel-Art-Tileset/PNG/Objects_separetely/Bones_shadow1_2.png"), "text": "*Silent breathing...*"},
-	{"speaker": "You", "portrait": preload("res://Scared_Portrait.png"), "text": "Who's this?"},
+	{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "Who's this?"},
 	{"speaker": "Unknown", "portrait": preload("res://Horror/Free-Cursed-Land-Top-Down-Pixel-Art-Tileset/PNG/Objects_separetely/Bones_shadow1_2.png"), "text": "They are watching. They beacon you..."},
 	{"speaker": "Unknown", "portrait": preload("res://Horror/Free-Cursed-Land-Top-Down-Pixel-Art-Tileset/PNG/Objects_separetely/Bones_shadow1_2.png"), "text": "Soon child..."},
-	{"speaker": "You", "portrait": preload("res://Scared_Portrait.png"), "text": "What?! Who is this?"},
+	{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "What?! Who is this?"},
 	{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "Oh, the line disconnected."}
 ], dialogue_position.dialogue_position)
 

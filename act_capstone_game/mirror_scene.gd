@@ -31,9 +31,9 @@ func _process(delta: float) -> void:
 	if mirror_scene.visible == true:
 		if shown_dialogue == false:
 			dialogue_manager.show_messages([
-			{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "Huh? *chuckles*"},
-			{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "Well, I look normal."},
-			{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "I guess I am not drea--"}
+			{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "Huh? *chuckles*"},
+			{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "Well, I look normal."},
+			{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "I guess I am not drea--"}
 			], dialogue_position.dialogue_position)
 			shown_dialogue = true
 			
@@ -62,9 +62,9 @@ func stop_flicker():
 	
 	if last_dialogue == false:
 		dialogue_manager.show_messages([
-		{"speaker": "You", "portrait": preload("res://Scared_Portrait.png"), "text": "What was that?!"},
-		{"speaker": "You", "portrait": preload("res://Scared_Portrait.png"), "text": "Am I really dreaming?"},
-		{"speaker": "You", "portrait": preload("res://Scared_Portrait.png"), "text": "Ugh. My brain must be playing tricks on me."}
+		{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "What was that?!"},
+		{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "Am I really dreaming?"},
+		{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "Ugh. My brain must be playing tricks on me."}
 		], dialogue_position.dialogue_position)
 		last_dialogue = true
 

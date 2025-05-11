@@ -25,7 +25,7 @@ func _on_body_entered(body: Node2D) -> void:
 	dialogue_manager.show_messages([
 	{"speaker": "All-knowing", "portrait": preload("res://Monster_portrait.png"), "text": "You made it."},
 	{"speaker": "All-knowing", "portrait": preload("res://Monster_portrait.png"), "text": "I have been waiting for you. I knew you would come."},
-	{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "Who are you? What is this place?"},
+	{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "Who are you? What is this place?"},
 	{"speaker": "All-knowing", "portrait": preload("res://Monster_portrait.png"), "text": "You came here to find answers. Answers you shall find."},
 	{"speaker": "All-knowing", "portrait": preload("res://Monster_portrait.png"), "text": "It all depends on you. You can trust me or not."},
 	{"speaker": "All-knowing", "portrait": preload("res://Monster_portrait.png"), "text": "Either way, it's your decision."}

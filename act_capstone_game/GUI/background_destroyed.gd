@@ -61,10 +61,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if dialogue_end == false and anim_done == true:
 		dialogue_manager.show_messages([
-		{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "Ugh, my head is aching..."},
-		{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "I have been so tired these days."},
-		{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "And the house keeps getting worse and worse everyday. I have no energy to clean."},
-		{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "Maybe I should just take it slow for today."}
+		{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "Ugh, my head is aching..."},
+		{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "I have been so tired these days."},
+		{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "And the house keeps getting worse and worse everyday. I have no energy to clean."},
+		{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "Maybe I should just take it slow for today."}
 		], dialogue_position.dialogue_position)
 		
 		dialogue_end = true
@@ -121,14 +121,14 @@ func investigate_point(point_id: String) ->void:
 			"plant_hole":
 				arrow_2.visible = false
 				dialogue_manager.show_messages([
-				{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "Seriously? My plants die, yet this grows from here."}
+				{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "Seriously? My plants die, yet this grows from here."}
 				], dialogue_position.dialogue_position)
 			"bath_hole":
 				arrow_3.visible = false
 				dialogue_manager.show_messages([
-				{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "Oh, this seems like it leads to somewhere."},
+				{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "Oh, this seems like it leads to somewhere."},
 				{"speaker": "You", "portrait": preload("res://Scared_portrait.png"), "text": "I can hear something from here."},
-				{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "I should stay away from now."}
+				{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "I should stay away from now."}
 				], dialogue_position.dialogue_position)
 				
 		if investigation_found >= investigation_total:
@@ -212,9 +212,9 @@ func _on_button_pressed() -> void:
 func _on_front_door_body_entered(body: Node2D) -> void:
 	front_door = true
 	dialogue_manager.show_messages([
-	{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "The door..."},
-	{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "It's all barred."},
-	{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "I can't leave. I have to find another exit."}], dialogue_position.dialogue_position)
+	{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "The door..."},
+	{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "It's all barred."},
+	{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "I can't leave. I have to find another exit."}], dialogue_position.dialogue_position)
 
 
 func _on_front_door_body_exited(body: Node2D) -> void:

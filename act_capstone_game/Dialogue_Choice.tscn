@@ -1,12 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbybvcvacark5"]
+[gd_scene load_steps=5 format=3 uid="uid://b5lxielldt0in"]
 
 [ext_resource type="Script" path="res://dialogue_box.gd" id="1_32bsk"]
-[ext_resource type="Script" path="res://dialogue_choice.gd" id="1_661jv"]
 [ext_resource type="JSON" path="res://dialogue.json" id="2_08drj"]
 [ext_resource type="Script" uid="uid://dn8d57c65wqmk" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="4_0d8t0"]
 
+[sub_resource type="GDScript" id="GDScript_mt0ol"]
+script/source = "extends Node2D
+
+
+
+@export var dialogue_json: JSON
+@onready var state={}
+
+
+func _ready():
+	($EzDialogue as EzDialogue).start_dialogue(dialogue_json, state)
+	
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+
+func _on_ez_dialogue_dialogue_generated(response: DialogueResponse) -> void:
+	$DialogueBox.clear_dialogue_box()
+	
+	$DialogueBox.add_text(response.text)
+	
+	for choice in response.choices:
+		$DialogueBox.add_choice(choice)
+"
+
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_661jv")
+script = SubResource("GDScript_mt0ol")
 dialogue_json = ExtResource("2_08drj")
 
 [node name="DialogueBox" type="Node2D" parent="."]

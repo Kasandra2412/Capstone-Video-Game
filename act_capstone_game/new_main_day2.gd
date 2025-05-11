@@ -22,11 +22,11 @@ func _on_bed_body_entered(body: Node2D) -> void:
 	if tasks.bed_made == true:
 		if all_tasks.tasks_done == false:
 			dialogue_manager.show_messages([
-			{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "I should finish all my tasks first..."}], dialogue_position)
+			{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "I should finish all my tasks first..."}], dialogue_position)
 		else:
 			dialogue_manager.show_messages([
-			{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "Things  were weird today. Maybe I just need some sleep..."},
-			{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "Goodnight."}], dialogue_position)
+			{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "Things  were weird today. Maybe I just need some sleep..."},
+			{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "Goodnight."}], dialogue_position)
 
 func _on_bed_body_exited(body: Node2D) -> void:
 	dialogue_manager._hide() # Replace with function body.

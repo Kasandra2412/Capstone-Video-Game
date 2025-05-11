@@ -24,22 +24,22 @@ func _on_bath_plant_body_entered(body: Node2D) -> void:
 	var dialogue_options = [
 	{
 		"speaker": "You",
-		"portrait": preload("res://Normal_Portrait.png"),
+		"portrait": preload("res://Normal_portrait.png"),
 		"text": "These plants are growing nicely!"
 	},
 	{
 		"speaker": "You",
-		"portrait": preload("res://Normal_Portrait.png"),
+		"portrait": preload("res://Normal_portrait.png"),
 		"text": "So green and lively!"
 	},
 	{
 		"speaker": "You",
-		"portrait": preload("res://Normal_Portrait.png"),
+		"portrait": preload("res://Normal_portrait.png"),
 		"text": "Looks like the watering paid off."
 	},
 	{
 		"speaker": "You",
-		"portrait": preload("res://Normal_Portrait.png"),
+		"portrait": preload("res://Normal_portrait.png"),
 		"text": "Maybe I should plant more someday."
 	}
 ]
@@ -59,22 +59,22 @@ func _on_living_plant_body_entered(body: Node2D) -> void:
 	var dialogue_options = [
 	{
 		"speaker": "You",
-		"portrait": preload("res://Normal_Portrait.png"),
+		"portrait": preload("res://Normal_portrait.png"),
 		"text": "These plants are growing nicely!"
 	},
 	{
 		"speaker": "You",
-		"portrait": preload("res://Normal_Portrait.png"),
+		"portrait": preload("res://Normal_portrait.png"),
 		"text": "So green and lively!"
 	},
 	{
 		"speaker": "You",
-		"portrait": preload("res://Normal_Portrait.png"),
+		"portrait": preload("res://Normal_portrait.png"),
 		"text": "Looks like the watering paid off."
 	},
 	{
 		"speaker": "You",
-		"portrait": preload("res://Normal_Portrait.png"),
+		"portrait": preload("res://Normal_portrait.png"),
 		"text": "Maybe I should plant more someday."
 	}
 ]
@@ -93,22 +93,22 @@ func _on_bed_plant_body_entered(body: Node2D) -> void:
 	var dialogue_options = [
 	{
 		"speaker": "You",
-		"portrait": preload("res://Normal_Portrait.png"),
+		"portrait": preload("res://Normal_portrait.png"),
 		"text": "These plants are growing nicely!"
 	},
 	{
 		"speaker": "You",
-		"portrait": preload("res://Normal_Portrait.png"),
+		"portrait": preload("res://Normal_portrait.png"),
 		"text": "So green and lively!"
 	},
 	{
 		"speaker": "You",
-		"portrait": preload("res://Normal_Portrait.png"),
+		"portrait": preload("res://Normal_portrait.png"),
 		"text": "Looks like the watering paid off."
 	},
 	{
 		"speaker": "You",
-		"portrait": preload("res://Normal_Portrait.png"),
+		"portrait": preload("res://Normal_portrait.png"),
 		"text": "Maybe I should plant more someday."
 	}
 ]
@@ -127,7 +127,7 @@ func _on_bed_plant_body_exited(body: Node2D) -> void:
 func _on_bed_body_entered(body: Node2D) -> void:
 	if all_tasks.tasks_done == false:
 		dialogue_manager.show_messages([
-		{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text": "I should finish all my tasks first..."}
+		{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text": "I should finish all my tasks first..."}
 		], dialogue_position)
 
 
@@ -138,11 +138,11 @@ func _on_bed_body_exited(body: Node2D) -> void:
 func _on_fridge_food_body_entered(body: Node2D) -> void:
 	if tasks.eating_count < 3:
 		dialogue_manager.show_messages([
-		{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text":"Just got groceries. These should last me a few meals."}
+		{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text":"Just got groceries. These should last me a few meals."}
 		], dialogue_position)
 	else:
 		dialogue_manager.show_messages([
-		{"speaker": "You", "portrait": preload("res://Normal_Portrait.png"), "text":"Can't eat anymore."}
+		{"speaker": "You", "portrait": preload("res://Normal_portrait.png"), "text":"Can't eat anymore."}
 		], dialogue_position)
 
 func _on_fridge_food_body_exited(body: Node2D) -> void:
